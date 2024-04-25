@@ -26,19 +26,14 @@ def bytesio_to_numpy(audio_bytes):
 
 # Streamlit App
 st.title("Speech to Text with Whisper")
-st.write("Speak into your microphone and click 'Transcribe'")
+st.write("Upload audio File to 'Transcribe'")
 
-audio_file = st.file_uploader("Upload Audio File (Optional)", type=["wav", "mp3"])
+audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3"])
 
 if audio_file:
   audio_bytes = audio_file.read()
   transcript = transcribe(audio_bytes)
   st.write("Transcription:", transcript)
-else:
-  # Microphone recording (requires additional setup for browser compatibility)
-  # Replace with your preferred microphone recording library
-  # transcript = transcribe_from_microphone()
-  # st.write("Microphone recording not yet implemented.")
-  st.write("Microphone recording functionality is not currently supported in Streamlit apps due to browser limitations.")
 
-st.write("Note: This is a basic example. Consider error handling and advanced features for a production application.")
+
+st.write("Note: This is a basic example. using base model. For accuracy we need to use large whisper model, which needs high computational resources")
