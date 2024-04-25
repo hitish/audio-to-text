@@ -5,7 +5,7 @@ from io import BytesIO
 import numpy as np
 
 # Set up Whisper model
-model = whisper.load_model("medium")  # Choose from "base", "medium", or "large"
+model = whisper.load_model("base")  # Choose from "base", "medium", or "large"
 
 # Function to transcribe audio
 def transcribe(audio_bytes):
