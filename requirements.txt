@@ -1,5 +1,2 @@
 streamlit
 git+https://github.com/openai/whisper.git
-soundfile
-transformers
-torch
